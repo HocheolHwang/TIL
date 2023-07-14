@@ -1,0 +1,147 @@
+워킹 디렉토리 = 내 컴퓨터
+스테이징 에어리어 = 임시 공간
+레포지토리 = 외부 컴퓨터
+
+
+add -> 내 컴퓨터에서 임시공간으로 추가한다
+commit -> (추가한것에다가 변경사항 또는 메모를 추가한다) - 쪽지
+push -> 임시 공간 -> 외부 컴퓨터로 보낸다.
+
+ls -al = 모든 리스트
+git status = 상태창
+git add . = 전부 add
+git clone = 처음에 아예 없을 때 복사해오는거
+git pull = 달라진거만 가져오는거
+
+처음에는
+git remote add origin https://github.com/HocheolHwang/"레포지토리 이름".git
+위 문장은 로컬 git 저장소에 origin이라는 별명의 원격 저장소의 주소를 등록한다.
+
+git push -u origin master
+따라서 git push -u origin master는 로컬 master 브랜치의 변경 사항을
+ origin 원격 저장소로 푸시하면서 -u 옵션을 사용하여 로컬 브랜치와 원격 브랜치를 연결합니다.
+이후의 git push 명령어에서는 브랜치 이름을 생략하고 사용할 수 있습니다.
+
+처음 이후에는 그냥 git push
+왜냐면
+-u 옵션을 사용하여 추적 관계를 설정하면, 이후에는 git push 명령만 입력해도
+ 자동으로 연결된 원격 브랜치로 푸시할 수 있습니다.
+
+origin은 긴 나의 주소(https://github.com/hbsowo58/ssafyproject/"레포지토리 이름".git)를 
+origin 이라는 단축 이름으로 사용하는 것
+
+clear = 화면 지우기
+
+그 다음에 다른 주소로 origin 설정하려 하면 안된다
+왜냐 이미 origin 해놧음
+그래서 origin2 혹은 rmorigin 과 같은 이름으로 해야함
+
+이 이후에 git push 하려면
+git push -u rmorigin master로 다시 설정해얗마
+
+근데 사실 남의걸로 하면 권한 없다고 뜸;
+그럼 협업 어케하노? 
+
+팀장의 레포지토리 이름 ssafyproject
+
+git clone (주소) -> 방금 만든 빈 깡통 레포를 가져오는 것
+그 이후에 git add~git pull 이런거 하나하나 치지 말고 한 번에 전부 복붙 하면 됨
+asdf
+asdfasdf
+
+-----------------------------a------------
+
+echo "# asdf" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/HocheolHwang/asdf.git
+git push -u origin main
+
+-----------------------------------------
+
+
+
+git log 했더니 너무 길어진다거나 하면
+q 갈기면 터미널 창으로 돌아갈 수 있음
+ㅡㅡㅡㅡㅡ
+레포지토리 이름: ssafy
+레포지토리에 존재하는 파일 (3개)
+1. a.txt 내용 x
+2. b.txt 내용 x
+3. c.txt 내용 x
+ㅡㅡㅡㅡㅡㅡㅡ
+a.txt -> hello world! 내용 추가
+b.txt -> 추가
+---
+최종적으로 바탕화면에 ssafy 폴더 안에 a.txt, b.txt(내용 있음), c.txt. 존재할것
+
+
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+0714
+
+.gitignore: 무시하기. 업로드 하지 않을 것을 지정 (예를 들어 300개 중 100개만 업로드 해야 할 때)
+vs code로 .gitignore 만들어서 거기 안에 push 안할 파일 (예를 들어 c.txt.) 같은거 입력해두면 됨
+
+
+
+branch???
+
+
+문제
+
+최상단 브랜치: main / master 상관 x
+a,b,c,d,e.txt가 있을 것
+
+dev 브랜치 -> abcde.txt가 있고
+a.txt에 "hello world!" 입력
+
+feture 브랜치 -> abcde.txt 가 있고
+b.txt에 "hello world!" 입력
+
+hot fix branch -> feture 브랜치를 따서
+c.txt에 "hello world!" 입력
+
+
+참고!! master 상태에서 git bracnh dev 하면 master 밑에 dev가 만들어지는것처럼
+dev 상태에서 feture 하면 dev 밑에 만들어지므로
+master로 나와서 만들어야한다.
+
+----------------------------------------
+
+Markdown 가독성
+
+
+import math
+
+math.pow(1, 2)
+
+제목
+
+부제목
+
+내용
+
+
+구분선 --- 세개
+
+
+중요한거!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+코드 넣는 곳
+```
+```
+코드 블록의 시작과 끝을 표시하는 기호인 ``` (백틱)을 사용!!!!!
+
+
+
+Typora??
+마크다운 작성을 도와주는 에디터
+
+
+
+
+
