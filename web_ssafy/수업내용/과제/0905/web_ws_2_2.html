@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .card {
+      border: 2px solid black;
+      width: 800px;
+      height: 400px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 34px;
+    }
+
+    .custom-image {
+      width: 250px;
+      height: 250px;
+    }
+
+    .item > h3, h4 {
+      text-align: center;
+      font-size: 25px;
+      margin: 0px;
+      width: 250px;
+    }
+
+    .item > h3 {
+      font-size: 30px;
+    }
+
+    p {
+      margin: 0px;
+      margin-right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .description {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .description p {
+      margin: 0px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid gray;
+      width: 100%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="container">
+      <img src="profile.jpg" alt="Profile Image" class="custom-image">
+      <h2>Company Name</h2>
+    </div>
+    <div class="container">
+      <div class="item">
+        <h3>한글 이름</h3>
+        <h4>English Name</h4>
+      </div>
+      <div class="item">
+        <p>Phone Number</p>
+        <p>Email</p>
+      </div>
+    </div>
+    <hr>
+    <div class="description">
+      <p>description</p>
+    </div>
+  </div>
+</body>
+
+</html>

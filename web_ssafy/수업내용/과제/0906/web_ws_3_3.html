@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<style>
+		.system {
+			width: 440px;
+		}
+
+		.failure {
+			width: 440px;
+			height: 60px;
+			border-radius: 5px;
+			background-color: rgb(233, 19, 0);
+			color: white;
+			margin-bottom: 15px;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+		}
+
+		h1 {
+			font-weight: bold;
+			font-size: 35px;
+			padding-bottom: 15px;
+			border-bottom: 2px solid rgb(210, 210, 210);
+			margin-bottom: 15px;
+		}
+
+		.sign_in {
+			border: 2px solid rgb(210, 210, 210);
+			border-radius: 5px;
+			width: 440px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		p {
+			margin-bottom: 10px;
+			font-weight: bold;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.sign {
+			border-bottom: 3px solid rgb(13, 110, 253);
+			padding: 20px;
+			margin-bottom: 25px;
+			text-align: center;
+		}
+
+		.input {
+			border: 2px solid rgb(210, 210, 210);
+			border-radius: 5px;
+			width: 396px;
+			height: 40px;
+			margin: 20px;
+			margin-top: 0px;
+			margin-bottom: 30px;
+		}
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.container1 {
+			display: flex;
+			align-items: end;
+		}
+
+		.check {
+			border: 2px solid rgb(210, 210, 210);
+			border-radius: 5px;
+			width: 16px;
+			height: 16px;
+			margin-bottom: 2px;
+			margin-right: 5px;
+		}
+
+		.p1 {
+			padding: 0px;
+			margin: 0px;
+			font-weight: normal;
+		}
+
+		.Forgot {
+			color: blue;
+		}
+
+		.btn {
+			width: 396px;
+			margin: 20px;
+			margin-bottom: 25px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	
+	<div class="system">
+		<div class="failure">Invalid Login or password</div>
+		<h1>SSAFY 전용 Gitlab 시스템</h1>
+		<div class="sign_in">
+			<p class="sign">Sign in</p>
+			<p>Username or Email</p>
+			<div class="input"></div>
+			<p>Password</p>
+			<div class="input"></div>
+			<div class="container">
+				<div class="container1">
+					<div class="check"></div>
+					<p class="p1">Remember me</p>
+				</div>
+				<p class="p1 Forgot">Forgot your password?</p>
+			</div>
+			<button type="button" class="btn btn-success">Sign in</button>
+		</div>
+	</div>
+</body>
+
+</html>
