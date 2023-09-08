@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Google Font 적용 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+	<!-- 1. Bootstrap 적용 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" href="./style.css">
+	<title>나의 웹 사이트</title>
+</head>
+
+<body>
+	<!-- 메뉴 -->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Home</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="#frontpage">Frontpage</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#project">Project</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#skills">Skills</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<!-- 메인 콘텐츠 -->
+	<main class="frontpage">
+		<h1>황호철의 포트폴리오입니다</h1>
+	</main>
+
+
+	<!-- 자기소개 -->
+	<section id="about" class="about">
+		<div class="about_title">
+			<img src="hocheol.jpg" alt="" class="hocheol_jpg rounded-circle">
+		</div>
+		<div class="about_content">
+			<p class="about_content_title">SSAFY 10기 부울경 지역 대표</p>
+			<p>
+				3년간 다녔던 대학원의 길을 그만두고, 개발자의 꿈을 꾸게 되었습니다. <br>
+				지금은 SSAFY 10기 비전공 반에서 열심히 공부 중입니다. 화이팅!
+			</p>
+		</div>
+	</section>
+
+
+	<!-- 프로젝트 -->
+	<section id="project" class="project">
+		<div class="project_title">
+			<p>Project</p>
+		</div>
+		<div class="project_content">
+			<p>
+				앞으로 다양한 프로젝트를 수행 할 예정입니다.
+			</p>
+		</div>
+	</section>
+
+
+
+	<!-- 기술 스택 -->
+	<section id="skills" class="skills">
+		<div class="skills_title">
+			<p>Skills</p>
+		</div>
+		<img src="python.png" alt="" class="python_jpg">
+	</section>
+
+
+
+	<!-- 꼬리말 -->
+	<section id="fotter" class="footer">
+		<div class="container">
+			<p class="item col-12">CONTACT</p>
+			<P class="item col-12">Phone: 010-3806-3834</P>
+			<p class="item col-12">E-mail: inpofes7849@naver.com</p>
+		</div>
+	</section>
+
+
+
+
+	<!-- 반응형 웹? -->
+	<!-- bootstrap grid system -->
+	<!-- 470px 밑으로는 웹을 제공하지 않겠다! -->
+	<div class="not-provied">이 사이트는 470px 사이즈 미만에서는 보이지 않습니다.</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>
