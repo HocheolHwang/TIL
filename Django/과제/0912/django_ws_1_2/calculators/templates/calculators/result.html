@@ -1,0 +1,13 @@
+{% extends "calculators/base.html" %}
+
+{% block content %}
+  <h1>계산결과</h1>
+  <p>{{ first_num }} + {{ second_num }} = {{ first_num|add:second_num }}</p>
+  <p>{{ first_num }} * {{ second_num }} = {{ mul_nums }} </p>
+  <p>{{ first_num }} - {{ second_num }} = {{ sub_nums }}</p>
+  {% if div_nums == None %}
+    <p>계산할 수 없습니다.</p>
+  {% else %}
+    <p>{{ first_num }} / {{ second_num }} = {{ div_nums }}</p>
+  {% endif %}
+{% endblock content %}

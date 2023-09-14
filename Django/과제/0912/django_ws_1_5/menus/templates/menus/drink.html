@@ -1,0 +1,12 @@
+{% extends "menus/base.html" %}
+
+{% block content %}
+{% for drink in drinks %}
+  <p>{{  drink  }}</p>
+{% endfor %}
+
+<form action="/receipt/" method="GET">
+  <input type="hidden" name="is_food" value=False>
+</form>
+
+{% endblock content %}

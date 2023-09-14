@@ -1,0 +1,10 @@
+{% extends "throw_loops/base.html" %}
+
+{% block content %}
+  <p>oops! I catch only {{  message|random  }} ㅠㅠ</p>
+  <form action="/first/" method="GET">
+    <label for="message">throw!</label>
+    <input type="text" name="message" id="message">
+    <input type="submit" value="휙">
+  </form>
+{% endblock content %}
