@@ -33,7 +33,7 @@ def receipt(request):
   is_in_menu = False
 
   # food를 주문했다면
-  if is_food:
+  if is_food == 'True':
     if message in food:
       is_in_menu = True
 
@@ -47,8 +47,10 @@ def receipt(request):
       if message in drink:
         is_in_menu = True
 
-      # 영어 단어의 첫 글자만 대문자로 바꾼다.
-      message = message[0].upper() + message[1:]
+
+  # 영어 단어의 첫 글자만 대문자로 바꾼다.
+  if is_english(message):
+    message = message[0].upper() + message[1:].lower()
 
   context = {
     'message': message,
