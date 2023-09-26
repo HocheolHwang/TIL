@@ -10,7 +10,7 @@
   <form action="{% url "articles:create" %}" method="POST">
     {% csrf_token %}
     <div>
-      <label for="">제목 : </label>
+      <label for="title">제목 : </label>
       <input type="text" id="title" name="title">
     </div>
     <div>
@@ -19,5 +19,7 @@
     </div>
     <input type="submit">
   </form>
+  <hr>
+  <a href="{% url 'articles:index' %}">[back]</a>
 </body>
 </html>

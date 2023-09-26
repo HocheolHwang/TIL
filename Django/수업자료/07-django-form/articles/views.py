@@ -26,28 +26,13 @@ def new(request):
 def create(request):
     title = request.POST.get('title')
     content = request.POST.get('content')
-
-    # 1
-    # article = Article()
-    # article.title = title
-    # article.content = content
-    # article.save()
-
-    # 2
-    article = Article(title=title, content = content)
+    article = Article(title=title, content=content)
     article.save()
-
-    # 3
-    # Article.objects.create(title=title, content = content)
-
-    # return render(request, 'articles/create.html')
     return redirect('articles:index')
 
 
 def delete(request, pk):
-    # 몇 번 게시글을 삭제할 것인지 조회
     article = Article.objects.get(pk=pk)
-    # 조회한 게시글을 삭제
     article.delete()
     return redirect('articles:index')
 
@@ -61,13 +46,8 @@ def edit(request, pk):
 
 
 def update(request, pk):
-    title = request.POST.get('title')
-    content = request.POST.get('content')
-
-    # 수정하고자 하는 게시글을 조회
     article = Article.objects.get(pk=pk)
-    article.title = title
-    article.content = content
+    article.title = request.POST.get('title')
+    article.content = request.POST.get('content')
     article.save()
-
     return redirect('articles:detail', article.pk)
