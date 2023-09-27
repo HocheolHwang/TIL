@@ -1,0 +1,9 @@
+<h2>edit</h2>
+<form action= "{% url 'reservations:update' reservation.pk %}" method="POST">
+  {% csrf_token %}
+  {{ form.as_div }}  <!-- <div> 태그로 감싸져 랜더링 됨 -->
+  {{ form.as_table }}  <!-- <tr> 태그로 감싸져 랜더링 됨 -->
+  {{ form.as_p }}  <!-- <p> 태그로 감싸져 랜더링 됨 -->
+  {{ form.as_ul }}  <!-- <li> 태그로 감싸져 랜더링 됨 -->
+  <input type="submit" value="submit">
+</form>
