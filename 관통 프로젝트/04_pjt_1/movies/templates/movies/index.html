@@ -1,0 +1,27 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+  <h1>INDEX PAGE</h1>
+  <div style="display: flex; flex-wrap: wrap;">
+    {% for movie in movies %}
+      <div style="
+        border: solid 1px #E2E2E2;
+        border-radius: 2%;
+        width: 48%; /* 2%의 여백까지 고려하여 48%로 설정 */
+        height: 200px;
+        margin: 0 1%; /* 좌우 여백을 설정 */
+        margin-bottom: 10px;
+        ">
+        <div style="background-color: #F5F5F5; padding: 10px; border-bottom: solid 1px #E2E2E2;">
+          <p style="font-size: 20px; margin: 0;">{{ movie.title }}</p>
+        </div>
+        <div style="padding: 10px;">
+          <p>{{ movie.synopsis }}</p>
+          <form action="{% url 'movies:detail' movie.pk %}">
+            <input type="submit" value="Detail" class="btn btn-primary">
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
