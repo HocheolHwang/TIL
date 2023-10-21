@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row my-4">
+      <div class="col">
+        <h1>{{ person.username}}님의 프로필 </h1>
+      </div>
+    </div>
+
+    <div class="row my-4">
+      <div class="col">
+        <h2>영화 목록</h2>
+        {% for movie in person.movie_set.all %}
+          <div class="alert alert-secondary" role="alert">
+            <a href="{% url 'movies:detail' movie.pk %}">{{movie.title}}</a>
+          </div>
+        {% empty %}
+          <p>등록된 영화가 없습니다.</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="row">
+      <h2>좋아요 누른 개수 : {{ user.like_movies.all|length }}</h2>
+      <a href="{% url "accounts:liked_items" user.id %}">좋아요 영화 확인</a>
+    </div>
+
+    <div class="row my-4">
+      <div class="col-md-6">
+        <p class="lead"><a href="{% url "accounts:followers" user.pk %}">팔로워</a>: {{ person.followers.all|length }}</p>
+        <p class="lead"><a href="{% url "accounts:followings" user.pk %}">팔로잉</a>: {{ person.followings.all|length }}</p>
+      </div>
+      <div class="col-md-6">
+        {% if request.user != person and request.user.is_authenticated %}
+          <form action="{% url 'accounts:follow' person.pk %}" method="POST" class="float-end">
+            {% csrf_token %}
+            {% if request.user in person.followers.all %}
+              <button class="btn btn-primary">팔로우 취소</button>
+            {% else %}
+              <button class="btn btn-primary">팔로우</button>
+            {% endif %}
+          </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}

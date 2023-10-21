@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+  <div class="mb-3">
+    <img src="{% static 'header.jpg' %}" class="img-fluid" alt="Responsive image" style="width: 100%;">
+  </div>
+  <h1 class="mb-4">INDEX PAGE</h1>
+  <div class="row row-cols-1 row-cols-md-2 g-">
+    {% for movie in movies %}
+      <div class="col mb-4">
+        <div class="card h-100 p-2">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="{% url 'movies:detail' movie.pk %}">
+                {{ movie.title }}
+              </a>
+            </h5>
+          </div>
+          <p class="text-end">{{ movie.created_at }}</p>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <p class="ps-3">좋아요 {{ movie.like_users.all|length }}</p>
+            <form action="{% url 'movies:like' movie.pk %}" method='POST'>
+              {% csrf_token %}
+              {% if request.user in movie.like_users.all %}
+                <button class="btn btn-primary">좋아요 취소</button>
+              {% else %}
+                <button class="btn btn-primary">좋아요</button>
+              {% endif %}
+            </form>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

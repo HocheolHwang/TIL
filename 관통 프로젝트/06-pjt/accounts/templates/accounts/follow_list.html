@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ title }}</h1>
+<a href="{% url "accounts:profile" user %}">Back</a>
+<hr>
+<ul>
+  {% for follow in follow_list %}
+    <li class="display-6">
+      <a href="{% url "accounts:profile" follow %}">{{ follow }}</a>
+    </li>
+  {% empty %}
+    <div>인원이 없습니다.</div>
+  {% endfor %}
+</ul>
+{% endblock content %}

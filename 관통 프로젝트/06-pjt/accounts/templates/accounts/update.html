@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="my-3">USER INFO UPDATE PAGE</h1>
+    <hr>
+
+    <form action="" method="POST" class="mb-3">
+      {% csrf_token %}
+      <div class="mb-3">
+        {{ form.as_p }}
+      </div>
+      <input type="submit" value="수정" class="btn btn-primary">
+    </form>
+    
+    <form action="{% url 'accounts:resign' %}" method="POST" class="mb-3">
+      {% csrf_token %}
+      <input type="submit" value="회원탈퇴" class="btn btn-danger">
+    </form>
+
+    <a href="{% url 'accounts:change_password' %}" class="btn btn-secondary">비밀번호 변경</a>
+  </div>
+{% endblock content %}
