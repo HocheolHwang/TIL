@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const a = [1, 2, 3, 4, 5]
+    // const findEven = a.reduce((newArr, num) => {
+    //   (num % 2) || newArr.push(num * 2)
+    //   return newArr
+    // }, [])
+    // console.log(findEven)
+
+    const a = ['피카츄', '라이츄', '파이리', '꼬부기', '피카츄', '파이리']
+
+    const result = a.reduce((obj, pokemon) => {
+      obj[pokemon] = (obj[pokemon] || 0) + 1
+      return obj
+    }, {})
+
+    console.log(result) // result = {피카츄: 2, 라이츄: 1, 파이리: 2, 꼬부기: 1}
+  </script>
+</body>
+</html>
+

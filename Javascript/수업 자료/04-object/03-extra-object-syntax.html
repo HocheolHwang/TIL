@@ -13,9 +13,14 @@
     const name = 'Alice'
     const age = 30
 
-    const user = {
+    const user1 = {
       name: name,
       age: age,
+    }
+
+    const user2 = {
+      name,
+      age,
     }
 
     // 단축 메서드
@@ -55,9 +60,9 @@
     // const userId = userInfo.userId
     // const email = userInfo.email
 
-    // const { firstName } = userInfo
+    const { firstName } = userInfo
     // const { firstName, userId } = userInfo
-    const { firstName, userId, email } = userInfo
+    // const { firstName, userId, email } = userInfo
 
     // Alice alice123 alice123@gmail.com
     console.log(firstName, userId, email)
