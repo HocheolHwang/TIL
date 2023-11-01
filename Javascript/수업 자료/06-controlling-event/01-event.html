@@ -12,6 +12,20 @@
   <button id="btn">버튼</button>
 
   <script>
+    // 1. 버튼 선택
+    const btn = document.querySelector('#btn')
+
+    // 콜백함수 작성
+    // 화살표 함수로 쓰면 안됨 (this가 window를 가르키게 됨)
+    const clickCallbackFunc = function (event) {
+      console.log(event)
+      console.log(event.target)
+      console.log(event.currentTarget)
+      console.log(this)
+    }
+
+    // 2. 버튼에 이벤트 핸들러를 부착
+    btn.addEventListener('click', clickCallbackFunc)
   </script>
 </body>
 
