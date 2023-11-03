@@ -43,10 +43,11 @@
           status: false
         })
         const cal_average = () => {
-          avgScore.value = 0
-          scores.value.forEach((score) => {
-            avgScore.value += (score / scores.value.length)
-          })
+          // avgScore.value = 0
+          // scores.value.forEach((score) => {
+          //   avgScore.value += (score / scores.value.length)
+          // })
+          avgScore.value = scores.value.reduce((avg, score) => avg + score / scores.value.length, 0)
         }
         return {
           title,

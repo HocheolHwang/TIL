@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="border: 1px solid black; padding: 20px; display: flex; background-color: #f9f9f9; border-radius: 10px;">
+  <div style="flex: 1;">
+    <img src="{{ movie.poster_path }}" alt="{{ movie.title }} 포스터" style="max-width: 300px; max-height: 450px; border-radius: 10px;">
+  </div>
+  <div style="flex: 2; padding-left: 20px;">
+    <h2 style="margin-top: 0; color: #333;">{{ movie.title }}</h2>
+    <p><strong>영화 번호:</strong> {{ movie.pk }}</p>
+    <p><strong>장르:</strong>
+      {% for genre in genres %}
+        <span style="background-color: #d1ecf1; color: #0c5460; padding: 3px 8px; border-radius: 5px; margin-right: 5px;">{{ genre.name }}</span>
+      {% endfor %}
+    </p>
+    <p><strong>개봉일:</strong> {{ movie.release_date }}</p>
+    <p><strong>인기도:</strong> {{ movie.popularity }}</p>
+    <p><strong>평가 수:</strong> {{ movie.vote_count }}</p>
+    <p><strong>평균 평점:</strong> {{ movie.vote_average }}</p>
+    <p style="margin-top: 20px;"><strong>줄거리:</strong> {{ movie.overview }}</p>
+  </div>
+</div>
+{% endblock %}
