@@ -1,0 +1,54 @@
+< 가상환경 venv 생성 >
+python -m venv venv
+
+< 가상환경 활성화 >
+source venv/Scripts/activate
+
+< 장고 설치 >
+pip install Django
+
+< 텍스트 파일 읽기(read) >
+pip install -r requirements.txt
+
+< 패키지 목록을 텍스트 파일로 작성 >
+pip freeze > requirements.txt
+
+< django 프로젝트 생성 >
+django-admin startproject firstpjt .
+
+< 앱 생성 >
+python manage.py startapp articles
+python manage.py startapp movies
+
+< Django 서버 실행 >
+python manage.py runserver
+
+< model 클래스 작성 >
+class Article(models.Model):
+    title = models.CharField(max_length=10)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+< Migrations >
+python manage.py makemigrations
+python manage.py migrate
+
+< admin 계정 생성 >
+python manage.py createsuperuser
+
+< admin에 모델 클래스 등록>
+# articles/admin.py
+from django.contrib import admin
+form .models import Article
+
+admin.site.register(Article)
+
+< 외부 라이브러리 설치 및 설정 >
+pip install ipython
+pip install django-extensions
+
+# settings.py에 등록
+'django_extensions',
+
+pip freeze > requirements.txt
