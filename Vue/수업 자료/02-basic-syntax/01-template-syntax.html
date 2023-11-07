@@ -22,6 +22,9 @@
     <p v-if="seen">Hello</p>
     <a v-bind:href="myUrl">Link</a>
     <button v-on:click="doSomething">버튼</button>
+    <form v-on:submit.prevent="onSubmit">
+      <input type="submit">
+    </form>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

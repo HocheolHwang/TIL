@@ -9,6 +9,12 @@
 
 <body>
   <div id="app">
+    <p>{{ inputText1 }}</p>
+    <input type="text" @input="onInput" :value="inputText1">
+
+    <!-- 한글은 v-model 쓰면 글자 완성될 때마다 반영되므로, 위 방법이 좋다 -->
+    <p>{{ inputText2 }}</p>
+    <input type="text" v-model="inputText2">
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -17,7 +23,16 @@
 
     const app = createApp({
       setup() {
-        return {}
+        const inputText1 = ref('')
+        const onInput = function (event) {
+          inputText1.value = event.currentTarget.value
+        }
+        const inputText2 = ref('')
+        return {
+          inputText1,
+          onInput,
+          inputText2
+        }
       }
     })
 
