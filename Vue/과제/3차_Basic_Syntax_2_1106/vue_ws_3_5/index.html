@@ -34,47 +34,26 @@
     <label for="isActive">전시 중인 정보만 보기</label>
     <input type="checkbox" id="isActive" v-model="isActive">
     <ul>
-      <template v-if="isActive">
-        <li v-for="exhibition in isActiveExhibition" :key="exhibition.name"
-            :class="{
-              cheap: exhibition.price <= 5000,
-              expensive: exhibition.price >= 20000,
-              selected: exhibition.isSelected
-            }">
-          <div>
-            <label for="isSelected">전시 관람 하기</label>
-            <input type="checkbox" id="isSelected" v-model="exhibition.isSelected">
-          </div>
-          <h3>{{ exhibition.name }}</h3>
-          <hr>
-          <p>{{ exhibition.location }}</p>
-          <p>가격 : {{ exhibition.price }}</p>
-          <p v-if="exhibition.price === 0">무료 전시입니다.</p>
-          <hr>
-        </li>
-      </template>
-      <template v-else>
-        <li v-for="exhibition in exhibitionInfo" :key="exhibition.name"
-            :class="{
-              cheap: exhibition.price <= 5000,
-              expensive: exhibition.price >= 20000,
-              selected: exhibition.isSelected
-            }">
-          <div v-if="exhibition.avtive">
-            <label for="isSelected">전시 관람 하기</label>
-            <input type="checkbox" id="isSelected" v-model="exhibition.isSelected">
-          </div>
-          <div v-else style="color: red;">
-            <p>전시가 종료되어 관람 할 수 없습니다.</p>
-          </div>
-          <h3>{{ exhibition.name }}</h3>
-          <hr>
-          <p>{{ exhibition.location }}</p>
-          <p>가격 : {{ exhibition.price }}</p>
-          <p v-if="exhibition.price === 0">무료 전시입니다.</p>
-          <hr>
-        </li>
-      </template>
+      <li v-for="exhibition in isActive ? isActiveExhibition : exhibitionInfo" :key="exhibition.name"
+          :class="{
+            cheap: exhibition.price <= 5000,
+            expensive: exhibition.price >= 20000,
+            selected: exhibition.isSelected
+          }">
+        <div v-if="exhibition.avtive">
+          <label for="isSelected">전시 관람 하기</label>
+          <input type="checkbox" id="isSelected" v-model="exhibition.isSelected">
+        </div>
+        <div v-else style="color: red;">
+          <p>전시가 종료되어 관람 할 수 없습니다.</p>
+        </div>
+        <h3>{{ exhibition.name }}</h3>
+        <hr>
+        <p>{{ exhibition.location }}</p>
+        <p>가격 : {{ exhibition.price }}</p>
+        <p v-if="exhibition.price === 0">무료 전시입니다.</p>
+        <hr>
+      </li>
     </ul>
   </div>
 
