@@ -12,7 +12,7 @@ defineProps({
 
 const emit = defineEmits(['updateName'])
 
-const updateName = function () {
+const updateName = () => {
   emit('updateName')
 }
 

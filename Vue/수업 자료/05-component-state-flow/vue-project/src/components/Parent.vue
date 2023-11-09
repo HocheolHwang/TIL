@@ -1,8 +1,8 @@
 <template>
   <div>
-    <ParentChild 
-      my-msg="ssafy" 
-      :dynamic-props="name" 
+    <ParentChild
+      my-msg="ssafy"
+      :dynamic-props="name"
       @some-event="someCallback"
       @emit-args="getNumbers"
       @update-name="updateName"
@@ -16,17 +16,18 @@ import { ref } from 'vue'
 
 const name = ref('Alice')
 
-const someCallback = function () {
+const someCallback = () => {
   console.log('ParentChild가 발신한 emit 이벤트를 수신했습니다.')
 }
 
-const getNumbers = function (...args) {
+const getNumbers = (...args) => {
   console.log(args)
 }
 
-const updateName = function () {
+const updateName = () => {
   name.value = 'Bella'
 }
+
 </script>
 
 <style scoped>

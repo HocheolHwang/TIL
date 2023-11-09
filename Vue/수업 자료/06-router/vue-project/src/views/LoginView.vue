@@ -1,11 +1,10 @@
 <template>
   <div>
-    <Parent />
+    <h1>Login View</h1>
   </div>
 </template>
 
 <script setup>
-import Parent from '@/components/Parent.vue'
 
 </script>
 
